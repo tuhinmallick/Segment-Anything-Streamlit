@@ -29,8 +29,7 @@ def mask_generate():
 
     sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
     sam.to(device=device)
-    mask_generator = SamAutomaticMaskGenerator(sam)
-    return mask_generator
+    return SamAutomaticMaskGenerator(sam)
 
 
 def show_anns(anns, ax):
